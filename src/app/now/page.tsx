@@ -25,7 +25,7 @@ export default function NowPage() {
         <ul>
           <li>Full-time frontend software engineering (the day job)</li>
           <li>Building and maintaining client websites through <a href="https://mosaicridge.com" target="_blank" rel="noopener noreferrer">Mosaic Ridge</a></li>
-          <li>Building open source developer tools &mdash; first one is <a href="https://github.com/DaltonR121/stint" target="_blank" rel="noopener noreferrer">stint</a></li>
+          <li>Building open source developer tools (first one: <a href="https://github.com/DaltonR121/stint" target="_blank" rel="noopener noreferrer">stint</a>)</li>
           <li>This site</li>
         </ul>
 
@@ -45,15 +45,15 @@ export default function NowPage() {
 
         <h2>Playing</h2>
         <ul>
-          <li>Rocket League (always) &mdash; hanging around Diamond in most competitive modes. Dropshot &gt; Snow Day and that is the hill I will die on.</li>
+          <li>Rocket League (always). Hanging around Diamond in most competitive modes. Dropshot &gt; Snow Day and that is the hill I will die on.</li>
           <li>Fortnite (because Mason makes me)</li>
         </ul>
 
         <h2>Other Interests</h2>
         <ul>
-          <li>Homelabbing &mdash; running TrueNAS on a mini-PC and tinkering with it</li>
-          <li>Home improvement &mdash; the never-ending list (draining the water tank, outlets with open grounds, leaky bathtub spout...)</li>
-          <li>Bowling &mdash; probably joining a league this spring with a buddy. I used to average around 180-200 when I bowled in a league about 15 years ago.</li>
+          <li>Homelabbing. Running TrueNAS on a mini-PC and tinkering with it.</li>
+          <li>Home improvement. The never-ending list (draining the water tank, outlets with open grounds, leaky bathtub spout...).</li>
+          <li>Bowling. Probably joining a league this spring with a buddy. I used to average around 180-200 when I bowled in a league about 15 years ago.</li>
           <li>Bible study (daily)</li>
         </ul>
 

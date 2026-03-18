@@ -90,7 +90,7 @@ export default function AboutPage() {
           I grew up in Morgantown, West Virginia and drove tractor trailer for
           ten years because it&apos;s what I watched my dad do my whole life.
           There&apos;s still a passion for trucks, but it doesn&apos;t pay well
-          enough unless you&apos;re an owner/operator &mdash; and at that point
+          enough unless you&apos;re an owner/operator, and at that point
           it&apos;s not a job, it&apos;s a lifestyle. I hauled casing for
           drilling rigs, mining shields for coal mines, lumber, and saltwater
           and drilling fluids.
@@ -98,7 +98,7 @@ export default function AboutPage() {
         <p>
           I remember eating lunch with my high school drumline instructor,
           Mr. Welker, and his fianc&eacute;e (we called her &ldquo;MAW&rdquo;
-          &mdash; Miss Almost Welker). They told us about not wanting to be
+          (Miss Almost Welker). They told us about not wanting to be
           stuck in the same cycle as the rest of their family, where their
           parents were from their hometown, and their grandparents, and their
           grandparents&apos; parents. That always stuck with me. I wanted to
@@ -130,7 +130,7 @@ export default function AboutPage() {
           I started wrenching on big trucks before cars. My dad never wanted the
           blue-collar lifestyle for me and kept me away from his truck garage
           when I was young. He claims he wanted me to get a job pushing a pen.
-          Funny story &mdash; by 19, I was exactly where he didn&apos;t want me
+          Funny story: by 19, I was exactly where he didn&apos;t want me
           to be: in a truck.
         </p>
         <p>
@@ -146,7 +146,7 @@ export default function AboutPage() {
 
         <Image
           src="/kenworth-restoration.png"
-          alt="2000 Kenworth restoration — before and after, restored with dad"
+          alt="2000 Kenworth restoration, before and after, restored with dad"
           width={1200}
           height={675}
           className="rounded-lg"
@@ -163,7 +163,7 @@ export default function AboutPage() {
         <p>
           As I got older, I always assumed college was a barrier to entry. I
           honestly figured web development had reached a point where it was all
-          WYSIWYG &mdash; until I learned it might be a viable career without a
+          WYSIWYG until I learned it might be a viable career without a
           degree and there were bootcamps designed to get you there. I enrolled
           in App Academy in 2021, a six-month program. A lot of bootcamps drop
           you straight into React hoping you can write enough JSX to get hired.
@@ -202,14 +202,14 @@ export default function AboutPage() {
           were full of hypocrites who run wild until Sunday when they go to
           feel good about themselves. I convinced myself Church wasn&apos;t
           necessary. I was also guilty of using God like a vending
-          machine &mdash; prayers go in, hopefully my desired outcome comes out.
+          machine. Prayers go in, hopefully my desired outcome comes out.
         </p>
         <p>
           If I started to doubt my own excuses, my next scapegoat was time. I
           have a family to provide for. I have a social life to maintain. I
           have hobbies for the sake of my sanity. God understands, right? He
           sees how much I have to juggle and knows my heart, so that&apos;s
-          enough &mdash; isn&apos;t it?
+          enough... isn&apos;t it?
         </p>
         <p>
           Beyond all that, the sin I&apos;ve been most guilty of would be
@@ -241,7 +241,7 @@ export default function AboutPage() {
           St. Francis of Assisi is often credited with saying, &ldquo;Preach
           the Gospel at all times; use words when necessary.&rdquo; Roger is
           the kind of guy where words aren&apos;t necessary. He carries himself
-          differently &mdash; no arrogance, no superiority, just pure, honest
+          differently. No arrogance, no superiority, just pure, honest
           compassion. Even when his patience is wearing thin, his composure
           holds. I eventually found the courage to ask him about his faith.
           Since then, I&apos;ve spent hours asking him hard-hitting questions
@@ -266,7 +266,7 @@ export default function AboutPage() {
         <p>
           In June of 2025, I was baptized alongside my wife and step-dad. The
           clarity I&apos;ve experienced since that day has been incredible. My
-          wife and I can look back and see God&apos;s will being done &mdash;
+          wife and I can look back and see God&apos;s will being done,
           how He&apos;s been protecting and caring for us all along. We&apos;re
           so thankful to be part of a community that shares our values.
         </p>
@@ -275,7 +275,7 @@ export default function AboutPage() {
         <p>
           Finding Christ brought the name into focus. I had always been drawn
           to this idea of a &ldquo;simulated reality,&rdquo; but I had it
-          backwards. This <em>is</em> a simulated reality &mdash; not the kind
+          backwards. This <em>is</em> a simulated reality. Not the kind
           built by machines or code, but one authored by God Himself. Every
           moment of this life has been pre-built and set into motion by Him.
           It&apos;s His design, His will. And the name I thought I chose on a

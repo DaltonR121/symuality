@@ -10,7 +10,7 @@ export default function Home() {
             Hey, I&apos;m Symuality.
           </h1>
           <p className="mt-1 font-mono text-sm text-stone-400 dark:text-stone-500">
-            a.k.a. Ryan &mdash; the guy behind the screen
+            a.k.a. Ryan // the guy behind the screen
           </p>
           <p className="mt-6 text-lg leading-relaxed text-stone-600 dark:text-stone-400">
             Software engineer by day. Builder of things by nature. I spend time

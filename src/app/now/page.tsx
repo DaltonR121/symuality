@@ -14,6 +14,13 @@ export default function NowPage() {
           Updated March 2026 &middot; Churchville, VA
         </p>
 
+        <h2>Family</h2>
+        <ul>
+          <li>Jessica is baking, gardening, and making Target runs</li>
+          <li>Mason is about to earn his Yellow belt in karate</li>
+          <li>Pikachu (ball python) is doing ball python things</li>
+        </ul>
+
         <h2>Working On</h2>
         <ul>
           <li>Full-time frontend software engineering (the day job)</li>
@@ -42,16 +49,9 @@ export default function NowPage() {
           <li>Fortnite (because Mason makes me)</li>
         </ul>
 
-        <h2>Family</h2>
-        <ul>
-          <li>Jessica is baking, gardening, and making Target runs</li>
-          <li>Mason is about to earn his Yellow belt in karate</li>
-          <li>Pikachu (ball python) is doing ball python things</li>
-        </ul>
-
         <h2>Other Interests</h2>
         <ul>
-          <li>PC hardware and building rigs</li>
+          <li>Homelabbing &mdash; running TrueNAS on a mini-PC and tinkering with it</li>
           <li>Home improvement &mdash; the never-ending list (draining the water tank, outlets with open grounds, leaky bathtub spout...)</li>
           <li>Bowling &mdash; probably joining a league this spring with a buddy. I used to average around 180-200 when I bowled in a league about 15 years ago.</li>
           <li>Bible study (daily)</li>
@@ -66,7 +66,7 @@ export default function NowPage() {
           <li><strong>CPU:</strong> AMD Ryzen 9 3900X (12 cores / 24 threads)</li>
           <li><strong>RAM:</strong> 32 GB DDR4</li>
           <li><strong>GPU:</strong> AMD Radeon RX 6800 XT (Navi 21)</li>
-          <li><strong>OS:</strong> Linux (btw)</li>
+          <li><strong>OS:</strong> Linux (btw) / Windows 11 (for Rocket League)</li>
         </ul>
 
         <h2>Go-To Orders</h2>

@@ -11,8 +11,8 @@ export default function Home() {
           </h1>
           <p className="mt-4 text-lg leading-relaxed text-stone-600 dark:text-stone-400">
             Software engineer by day. Builder of things by nature. I wrench on
-            cars, build PCs, play way too much Rocket League, and occasionally
-            roll a decent game at the bowling alley. I also run a small web
+            cars, tinker with my homelab, play way too much Rocket League, and
+            occasionally roll a decent game at the bowling alley. I also run a small web
             development agency called{" "}
             <a
               href="https://mosaicridge.com"

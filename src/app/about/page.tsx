@@ -6,7 +6,19 @@ export const metadata: Metadata = {
   description: "The story behind Symuality and the person behind the screen.",
 };
 
+function getAge(birthDate: Date): number {
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+}
+
 export default function AboutPage() {
+  const masonAge = getAge(new Date(2019, 4, 30));
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <article className="prose prose-stone dark:prose-invert max-w-none">
@@ -21,26 +33,116 @@ export default function AboutPage() {
 
         <h2>Behind the Screen</h2>
         <p>
-          My name is Ryan Dalton. I&apos;m a full-time software engineer building a
-          small business called{" "}
+          My name is Ryan Dalton. I&apos;m a full-time software engineer, the
+          founder of a small web development agency called{" "}
           <a
             href="https://mosaicridge.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             Mosaic Ridge
-          </a>{" "}
-          based out of Churchville, Virginia. If you&apos;d like to know
-          more about my professional experiences, feel free to check
-          out my{" "}
-          <a
-            href="https://ryandalton.dev"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Portfolio
           </a>
-          .
+          , and a husband and dad living in Churchville, Virginia.
+        </p>
+        <p>
+          My wife Jessica is a stay-at-home mom who enjoys baking, gardening,
+          coffee, Target, Netflix, and Amazon. She claims to be an introvert but
+          I&apos;m secretly convinced she&apos;s just an extremely shy,
+          anxiety-filled extrovert. We joke that she&apos;s a golden retriever
+          because she enjoys nothing more than a good drive. Our son Mason
+          is {masonAge} and is all energy. He loves karate (about to earn his
+          Yellow belt), shooting hoops in the driveway, passing football, making
+          dad play Fortnite, and helping me wrench on the project car. He also
+          has a pet ball python named Pikachu.
+        </p>
+
+        <h2>The Long Way Around</h2>
+        <p>
+          I grew up in Morgantown, West Virginia. I drove tractor trailer for
+          ten years because it&apos;s what I watched my dad do my whole life.
+          There&apos;s still a passion for trucks, but it doesn&apos;t pay well
+          enough unless you&apos;re an owner/operator, and at that point it&apos;s
+          a lifestyle. I hauled casing for drilling rigs, mining shields to
+          support the roof of coal mines underground, lumber, and
+          saltwater and drilling fluids.
+        </p>
+        <p>
+          I remember a story from when I marched drumline in high school. Our
+          instructor was &ldquo;Mr. Welker&rdquo; and we called his fianc&eacute;e
+          &ldquo;MAW&rdquo; (Miss Almost Welker). We were eating lunch one day
+          and they told us about how they didn&apos;t want to be stuck in the
+          same cycle as the rest of their family &mdash; where their parents
+          were from their hometown, and their grandparents, and their
+          grandparents&apos; parents. That always stuck with me. I wanted to see
+          different places.
+        </p>
+        <p>
+          My wife and I love Bryan-College Station, Texas. It&apos;s my
+          favorite place on Earth. Our son was born there in May 2019. We
+          decided to move back to the Northeast so he could know his family. We
+          spent about four years in Toms River, New Jersey and have been in
+          Churchville, Virginia since March 2025. We intend to stay here until
+          Mason graduates high school at a minimum. This may be the last stop
+          for us forever. It may not. Time shall tell. Fun fact: I get to live
+          right next door to my mom and step-dad. It&apos;s a blessing for our
+          son and we couldn&apos;t be happier about it.
+        </p>
+        <p>
+          I also served in the U.S. Army Reserves as a 12C (Bridge Crewmember)
+          from 2009 to 2017. I went through Fort Leonard Wood, Missouri
+          (&ldquo;Fort Lost in the Woods&rdquo;) in early 2010 and was with the
+          459th Engineering Unit out of Bridgeport, West Virginia. Summer
+          training was at either Fort McCoy, Wisconsin or Fort Chaffee,
+          Arkansas. I never had the opportunity to serve overseas, but I always
+          felt a pull to do my duty for my country.
+        </p>
+
+        <h2>How I Got Into Code</h2>
+        <p>
+          Web development was something that interested me as early as middle
+          school. We learned a tiny amount of HTML in computer class in 7th
+          grade and I thought it was the coolest thing since sliced bread. Save
+          it as &ldquo;.html&rdquo;, double-click it, it opens in the browser.
+          I played with Yahoo GeoCities and Adobe Dreamweaver way back when.
+        </p>
+        <p>
+          As I got older, I always thought college was a barrier to entry. I
+          really figured web development had reached a point where it was all
+          WYSIWYG until I learned it might be a viable career option without a
+          degree and there were specialized bootcamps to help get you there. I
+          enrolled in App Academy in 2021 &mdash; a six-month program instead
+          of the usual three-month ones. A lot of bootcamps would drop you
+          straight into React in hopes of people not needing foundational skills
+          to get hired, as long as they could write JSX. App Academy spent the
+          first twelve weeks focusing on foundational JavaScript and really
+          preparing technical skills. That made a huge difference.
+        </p>
+        <p>
+          My first professional role was as a federal government contractor,
+          building applications for large agencies where security and
+          reliability weren&apos;t optional. From there I moved into enterprise
+          software development. I guess coding has become a lifestyle for me,
+          but at least I&apos;m not stuck away from home on major holidays and
+          family birthdays anymore.
+        </p>
+
+        <h2>Trucks, Cars, and Code</h2>
+        <p>
+          I started wrenching on big trucks before I did cars. My dad never
+          wanted the blue-collar lifestyle for me and kept me away from his
+          truck garage when I was young. He claims he wanted me to get a job
+          pushing a pen. Funny story &mdash; by 19, I was exactly where he
+          didn&apos;t want me to be: in a truck.
+        </p>
+        <p>
+          We spent a few months restoring an old 2000 Kenworth with a Cat 6NZ
+          motor and 13-speed transmission back to being road-worthy together.
+          It made for a fantastic memory and I ran that truck for a little over
+          two years. I&apos;ve probably spent more time wrenching on trucks than
+          cars. It feels a lot like coding in some sense. You take a problem,
+          break it down into smaller chunks, and work through those chunks until
+          problem solved. Checking fuses is basically the
+          dropping-print-statements of the automotive world.
         </p>
 
         <h2>The Name</h2>

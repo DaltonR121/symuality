@@ -57,88 +57,86 @@ export default async function PostPage({ params }: PageProps) {
   const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
-      <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
-        <article>
-          <header className="mb-8">
-            <time className="text-sm text-zinc-500 dark:text-zinc-400">
-              {new Date(post.date).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </time>
-            <h1 className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
-              {post.title}
-            </h1>
-            {post.tags.length > 0 && (
-              <div className="mt-3 flex flex-wrap gap-2">
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
-          </header>
-
-          <div className="prose prose-zinc dark:prose-invert max-w-none">
-            {renderable}
-          </div>
-        </article>
-
-        <nav className="mt-12 flex items-center justify-between border-t border-zinc-200 pt-6 dark:border-zinc-800">
-          {prevPost ? (
-            <Link
-              href={`/posts/${prevPost.slug}`}
-              className="inline-flex items-center text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-            >
-              <svg
-                className="mr-2 h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-              Older
-            </Link>
-          ) : (
-            <div />
+    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+      <article>
+        <header className="mb-8">
+          <time className="text-sm text-stone-500 dark:text-stone-400">
+            {new Date(post.date).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </time>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-100 sm:text-4xl">
+            {post.title}
+          </h1>
+          {post.tags.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {post.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-stone-100 px-2.5 py-0.5 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-400"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           )}
-          {nextPost ? (
-            <Link
-              href={`/posts/${nextPost.slug}`}
-              className="inline-flex items-center text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+        </header>
+
+        <div className="prose prose-stone dark:prose-invert max-w-none">
+          {renderable}
+        </div>
+      </article>
+
+      <nav className="mt-12 flex items-center justify-between border-t border-stone-200 pt-6 dark:border-stone-800">
+        {prevPost ? (
+          <Link
+            href={`/posts/${prevPost.slug}`}
+            className="inline-flex items-center text-sm font-medium text-stone-600 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100"
+          >
+            <svg
+              className="mr-2 h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-              Newer
-              <svg
-                className="ml-2 h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
-          ) : (
-            <div />
-          )}
-        </nav>
-      </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+            Older
+          </Link>
+        ) : (
+          <div />
+        )}
+        {nextPost ? (
+          <Link
+            href={`/posts/${nextPost.slug}`}
+            className="inline-flex items-center text-sm font-medium text-stone-600 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100"
+          >
+            Newer
+            <svg
+              className="ml-2 h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </Link>
+        ) : (
+          <div />
+        )}
+      </nav>
     </div>
   );
 }

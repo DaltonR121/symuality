@@ -1,72 +1,107 @@
 import Link from "next/link";
-import { createReader } from "@keystatic/core/reader";
-import config from "../../keystatic.config";
 
-const reader = createReader(process.cwd(), config);
-
-export default async function Home() {
-  const postSlugs = await reader.collections.posts.list();
-  const posts = await Promise.all(
-    postSlugs.map(async (slug) => {
-      const post = await reader.collections.posts.read(slug);
-      return { slug, ...post! };
-    })
-  );
-
-  const sortedPosts = posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
-
+export default function Home() {
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
-      <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
-        {sortedPosts.length === 0 ? (
-          <div className="rounded-lg border border-zinc-200 bg-white p-8 text-center dark:border-zinc-800 dark:bg-zinc-900">
-            <p className="text-zinc-500 dark:text-zinc-400">
-              No posts yet. Check back soon.
-            </p>
+    <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="space-y-8">
+        {/* Intro */}
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-100 sm:text-4xl">
+            Hey, I&apos;m Ryan.
+          </h1>
+          <p className="mt-4 text-lg leading-relaxed text-stone-600 dark:text-stone-400">
+            Software engineer by day. Builder of things by nature. I wrench on cars, build
+            PCs, play way too much Rocket League, and occasionally roll a decent game at the
+            bowling alley. I also run a small web development agency called{" "}
+            <a
+              href="https://mosaicridge.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-stone-900 underline underline-offset-2 hover:text-stone-700 dark:text-stone-200 dark:hover:text-stone-300"
+            >
+              Mosaic Ridge
+            </a>
+            .
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-stone-600 dark:text-stone-400">
+            This is my corner of the internet. No algorithm, no analytics, no content
+            strategy. Just a personal homepage like the ones people used to make.
+          </p>
+        </div>
+
+        {/* Quick links */}
+        <div className="grid gap-4 sm:grid-cols-2">
+          <QuickLink
+            href="/now"
+            title="What I'm doing now"
+            description="Current projects, interests, and what's on my mind."
+          />
+          <QuickLink
+            href="/projects"
+            title="Things I've built"
+            description="Software, websites, and open source tools."
+          />
+          <QuickLink
+            href="/posts"
+            title="Writing"
+            description="Thoughts on faith, code, and life."
+          />
+          <QuickLink
+            href="/about"
+            title="About me"
+            description="The longer version of who I am."
+          />
+        </div>
+
+        {/* Find me */}
+        <div className="border-t border-stone-200 pt-8 dark:border-stone-800">
+          <h2 className="text-sm font-medium uppercase tracking-wide text-stone-500 dark:text-stone-400">
+            Find me elsewhere
+          </h2>
+          <div className="mt-3 flex flex-wrap gap-4">
+            <ExternalLink href="https://github.com/DaltonR121" label="GitHub" />
+            <ExternalLink href="https://mosaicridge.com" label="Mosaic Ridge" />
           </div>
-        ) : (
-          <div className="space-y-8">
-            {sortedPosts.map((post) => (
-              <article key={post.slug}>
-                <Link
-                  href={`/posts/${post.slug}`}
-                  className="group block rounded-lg border border-zinc-200 bg-white p-6 transition-colors hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700"
-                >
-                  <time className="text-sm text-zinc-500 dark:text-zinc-400">
-                    {new Date(post.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </time>
-                  <h2 className="mt-2 text-xl font-semibold text-zinc-900 group-hover:text-zinc-700 dark:text-zinc-100 dark:group-hover:text-zinc-300">
-                    {post.title}
-                  </h2>
-                  {post.excerpt && (
-                    <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-                      {post.excerpt}
-                    </p>
-                  )}
-                  {post.tags.length > 0 && (
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {post.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </Link>
-              </article>
-            ))}
-          </div>
-        )}
+        </div>
       </div>
     </div>
+  );
+}
+
+function QuickLink({
+  href,
+  title,
+  description,
+}: {
+  href: string;
+  title: string;
+  description: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group rounded-lg border border-stone-200 p-5 transition-colors hover:border-stone-300 hover:bg-stone-50 dark:border-stone-800 dark:hover:border-stone-700 dark:hover:bg-stone-900"
+    >
+      <h3 className="font-semibold text-stone-900 group-hover:text-stone-700 dark:text-stone-100 dark:group-hover:text-stone-300">
+        {title}
+      </h3>
+      <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">
+        {description}
+      </p>
+    </Link>
+  );
+}
+
+function ExternalLink({ href, label }: { href: string; label: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-sm text-stone-600 underline underline-offset-2 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-200"
+    >
+      {label}
+      <span className="sr-only"> (opens in a new tab)</span>
+    </a>
   );
 }

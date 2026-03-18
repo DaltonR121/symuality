@@ -14,8 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Symuality",
-  description: "Thoughts, reflections, and notes along the way.",
+  title: {
+    default: "Symuality",
+    template: "%s - Symuality",
+  },
+  description: "Ryan Dalton's corner of the internet. Developer, builder, gamer, tinkerer.",
 };
 
 export default function RootLayout({
@@ -29,9 +32,16 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Nav />
-        {children}
-        <footer className="border-t border-zinc-200 bg-white py-6 text-center text-sm text-zinc-500 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
-          &copy; {new Date().getFullYear()} Symuality
+        <main>{children}</main>
+        <footer className="border-t border-stone-200 py-8 text-center dark:border-stone-800">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <p className="text-sm text-stone-500 dark:text-stone-400">
+              &copy; {new Date().getFullYear()} Symuality
+            </p>
+            <p className="mt-2 text-xs text-stone-400 dark:text-stone-500">
+              A personal homepage. Not a brand. Not a funnel. Just a guy on the internet.
+            </p>
+          </div>
         </footer>
       </body>
     </html>

@@ -300,7 +300,7 @@ export default function AboutPage() {
           <li><strong>CPU:</strong> AMD Ryzen 9 3900X (12 cores / 24 threads)</li>
           <li><strong>RAM:</strong> 32 GB DDR4</li>
           <li><strong>GPU:</strong> AMD Radeon RX 6800 XT (Navi 21)</li>
-          <li><strong>OS:</strong> Linux / Windows 11 (dual boot)</li>
+          <li><strong>OS:</strong> Linux (btw). Ubuntu to Debian back to Ubuntu. Would love to be an Arch bro but I&apos;m not sure I&apos;m cool enough. Dual booting Windows 11 for Rocket League.</li>
         </ul>
 
         <h2>Go-To Orders</h2>

@@ -125,33 +125,6 @@ export default function AboutPage() {
           my duty for my country.
         </p>
 
-        <h2>How I Got Into Code</h2>
-        <p>
-          Web development interested me as early as middle school. We learned a
-          tiny bit of HTML in 7th grade computer class and I thought it was the
-          coolest thing since sliced bread. Save it as &ldquo;.html&rdquo;,
-          double-click it, it opens in the browser. I played with Yahoo
-          GeoCities and Adobe Dreamweaver way back when.
-        </p>
-        <p>
-          As I got older, I always assumed college was a barrier to entry. I
-          honestly figured web development had reached a point where it was all
-          WYSIWYG &mdash; until I learned it might be a viable career without a
-          degree and there were bootcamps designed to get you there. I enrolled
-          in App Academy in 2021, a six-month program. A lot of bootcamps drop
-          you straight into React hoping you can write enough JSX to get hired.
-          App Academy spent the first twelve weeks on foundational JavaScript
-          and actually preparing your technical skills. That made a huge
-          difference.
-        </p>
-        <p>
-          My first professional role was as a federal government contractor,
-          building applications where security and reliability weren&apos;t
-          optional. From there I moved into enterprise software development.
-          Coding has become a lifestyle for me, but at least I&apos;m not stuck
-          away from home on major holidays and family birthdays anymore.
-        </p>
-
         <h2>Trucks, Cars, and Code</h2>
         <p>
           I started wrenching on big trucks before cars. My dad never wanted the
@@ -178,6 +151,33 @@ export default function AboutPage() {
           height={675}
           className="rounded-lg"
         />
+
+        <h2>How I Got Into Code</h2>
+        <p>
+          Web development interested me as early as middle school. We learned a
+          tiny bit of HTML in 7th grade computer class and I thought it was the
+          coolest thing since sliced bread. Save it as &ldquo;.html&rdquo;,
+          double-click it, it opens in the browser. I played with Yahoo
+          GeoCities and Adobe Dreamweaver way back when.
+        </p>
+        <p>
+          As I got older, I always assumed college was a barrier to entry. I
+          honestly figured web development had reached a point where it was all
+          WYSIWYG &mdash; until I learned it might be a viable career without a
+          degree and there were bootcamps designed to get you there. I enrolled
+          in App Academy in 2021, a six-month program. A lot of bootcamps drop
+          you straight into React hoping you can write enough JSX to get hired.
+          App Academy spent the first twelve weeks on foundational JavaScript
+          and actually preparing your technical skills. That made a huge
+          difference.
+        </p>
+        <p>
+          My first professional role was as a federal government contractor,
+          building applications where security and reliability weren&apos;t
+          optional. From there I moved into enterprise software development.
+          Coding has become a lifestyle for me, but at least I&apos;m not stuck
+          away from home on major holidays and family birthdays anymore.
+        </p>
 
         <h2>The Name</h2>
         <p>

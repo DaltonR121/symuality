@@ -2,7 +2,7 @@
 
 My corner of the internet. Not a brand. Not a funnel. Just a personal homepage like the ones people used to make.
 
-**Live:** Coming soon (symuality.dev)
+**Live:** [symuality.com](https://symuality.com)
 
 ## What's here
 

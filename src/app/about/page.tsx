@@ -283,6 +283,35 @@ export default function AboutPage() {
           understood why.
         </p>
 
+        <h2>Other Interests</h2>
+        <ul>
+          <li>Homelabbing. Running TrueNAS on a mini-PC and tinkering with it.</li>
+          <li>Home improvement. The never-ending list.</li>
+          <li>Bowling. I used to average around 180-200 when I bowled in a league about 15 years ago.</li>
+          <li>Bible study (daily)</li>
+        </ul>
+
+        <h2>The Rig</h2>
+        <p>
+          Built around 2018 and gradually upgraded since. Hoping it lasts a bit
+          longer before I have to jump off the retired AM4 chipset.
+        </p>
+        <ul>
+          <li><strong>CPU:</strong> AMD Ryzen 9 3900X (12 cores / 24 threads)</li>
+          <li><strong>RAM:</strong> 32 GB DDR4</li>
+          <li><strong>GPU:</strong> AMD Radeon RX 6800 XT (Navi 21)</li>
+          <li><strong>OS:</strong> Linux / Windows 11 (dual boot)</li>
+        </ul>
+
+        <h2>Go-To Orders</h2>
+        <p>I have a go-to order at every restaurant. Name anywhere and I could tell you this very moment what I&apos;d be ordering.</p>
+        <ul>
+          <li><strong>Taco Bell:</strong> Chicken Quesadilla combo</li>
+          <li><strong>Domino&apos;s:</strong> Pepperoni, sausage, and jalape&ntilde;os</li>
+          <li><strong>Subway:</strong> Italian BMT on Italian Herbs &amp; Cheese, pepperjack, tomatoes, honey mustard</li>
+          <li><strong>Burger King:</strong> Double Whopper with cheese, no lettuce, no pickle, no onion, cut in half with &ldquo;halfsies&rdquo; (half fries, half onion rings)</li>
+        </ul>
+
         <blockquote>
           <p>
             Trust in the Lord with all your heart, and do not lean on your own

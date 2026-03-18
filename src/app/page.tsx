@@ -67,6 +67,7 @@ export default function Home() {
             <ExternalLink href="https://x.com/Symuality" label="X" />
             <ExternalLink href="https://www.linkedin.com/in/devrdalton/" label="LinkedIn" />
             <ExternalLink href="https://www.youtube.com/channel/UCTKTWU21iCtx02T-v5OsHsA" label="YouTube" />
+            <ExternalLink href="https://rocketleague.tracker.network/rocket-league/profile/epic/Symuality/overview" label="RL Tracker" />
             <ExternalLink href="https://ryandalton.dev" label="Portfolio" />
             <ExternalLink href="https://mosaicridge.com" label="Mosaic Ridge" />
           </div>

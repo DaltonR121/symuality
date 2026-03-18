@@ -45,7 +45,7 @@ export default function NowPage() {
 
         <h2>Playing</h2>
         <ul>
-          <li>Rocket League (always). Hanging around Diamond in most competitive modes. Dropshot &gt; Snow Day and that is the hill I will die on.</li>
+          <li>Rocket League (always). Hanging around Diamond in most competitive modes. Dropshot &gt; Snow Day and that is the hill I will die on. <a href="https://rocketleague.tracker.network/rocket-league/profile/epic/Symuality/overview" target="_blank" rel="noopener noreferrer">Check my stats</a>.</li>
           <li>Fortnite (because Mason makes me)</li>
         </ul>
 

@@ -29,10 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex min-h-screen flex-col`}
       >
         <Nav />
-        <main>{children}</main>
+        <main className="flex-1">{children}</main>
         <footer className="border-t border-stone-200 py-8 text-center dark:border-stone-800">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <p className="text-sm text-stone-500 dark:text-stone-400">

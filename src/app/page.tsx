@@ -7,13 +7,16 @@ export default function Home() {
         {/* Intro */}
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-100 sm:text-4xl">
-            Hey, I&apos;m Ryan.
+            Hey, I&apos;m Symuality.
           </h1>
-          <p className="mt-4 text-lg leading-relaxed text-stone-600 dark:text-stone-400">
-            Software engineer by day. Builder of things by nature. I wrench on
-            cars, tinker with my homelab, play way too much Rocket League, and
-            occasionally roll a decent game at the bowling alley. I also run a small web
-            development agency called{" "}
+          <p className="mt-1 font-mono text-sm text-stone-400 dark:text-stone-500">
+            a.k.a. Ryan &mdash; the guy behind the screen
+          </p>
+          <p className="mt-6 text-lg leading-relaxed text-stone-600 dark:text-stone-400">
+            Software engineer by day. Builder of things by nature. I spend time
+            with my family, wrench on cars, tinker with my homelab, play way too
+            much Rocket League, and occasionally roll a decent game at the
+            bowling alley. I also run a small web development agency called{" "}
             <a
               href="https://mosaicridge.com"
               target="_blank"
@@ -61,6 +64,10 @@ export default function Home() {
           </h2>
           <div className="mt-3 flex flex-wrap gap-4">
             <ExternalLink href="https://github.com/DaltonR121" label="GitHub" />
+            <ExternalLink href="https://x.com/Symuality" label="X" />
+            <ExternalLink href="https://www.linkedin.com/in/devrdalton/" label="LinkedIn" />
+            <ExternalLink href="https://www.youtube.com/channel/UCTKTWU21iCtx02T-v5OsHsA" label="YouTube" />
+            <ExternalLink href="https://ryandalton.dev" label="Portfolio" />
             <ExternalLink href="https://mosaicridge.com" label="Mosaic Ridge" />
           </div>
         </div>

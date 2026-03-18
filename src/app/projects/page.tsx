@@ -13,6 +13,12 @@ const projects = [
     tag: "Business",
   },
   {
+    name: "RyanDalton.dev",
+    description: "My professional portfolio site.",
+    url: "https://ryandalton.dev",
+    tag: "Personal",
+  },
+  {
     name: "stint",
     description: "An open source developer tool.",
     url: "https://github.com/DaltonR121/stint",

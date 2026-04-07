@@ -65,7 +65,6 @@ export default function Home() {
           <div className="mt-3 flex flex-wrap gap-4">
             <ExternalLink href="https://github.com/DaltonR121" label="GitHub" />
             <ExternalLink href="https://x.com/Symuality" label="X" />
-            <ExternalLink href="https://www.linkedin.com/in/devrdalton/" label="LinkedIn" />
             <ExternalLink href="https://www.youtube.com/channel/UCTKTWU21iCtx02T-v5OsHsA" label="YouTube" />
             <ExternalLink href="https://rocketleague.tracker.network/rocket-league/profile/epic/Symuality/overview" label="RL Tracker" />
             <ExternalLink href="https://ryandalton.dev" label="Portfolio" />

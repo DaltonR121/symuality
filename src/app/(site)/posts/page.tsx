@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createReader } from "@keystatic/core/reader";
-import config from "../../../keystatic.config";
+import config from "../../../../keystatic.config";
 
 const reader = createReader(process.cwd(), config);
 

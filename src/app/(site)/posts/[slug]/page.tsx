@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { createReader } from "@keystatic/core/reader";
 import Markdoc from "@markdoc/markdoc";
 import React from "react";
-import config from "../../../../keystatic.config";
+import config from "../../../../../keystatic.config";
 
 const reader = createReader(process.cwd(), config);
 
@@ -42,20 +41,6 @@ export default async function PostPage({ params }: PageProps) {
   const transformed = Markdoc.transform(node);
   const renderable = Markdoc.renderers.react(transformed, React);
 
-  const allSlugs = await reader.collections.posts.list();
-  const allPosts = await Promise.all(
-    allSlugs.map(async (s) => {
-      const p = await reader.collections.posts.read(s);
-      return { slug: s, date: p!.date };
-    })
-  );
-  allPosts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
-  const currentIndex = allPosts.findIndex((p) => p.slug === slug);
-  const prevPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
-  const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
-
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <article>
@@ -89,54 +74,6 @@ export default async function PostPage({ params }: PageProps) {
         </div>
       </article>
 
-      <nav className="mt-12 flex items-center justify-between border-t border-stone-200 pt-6 dark:border-stone-800">
-        {prevPost ? (
-          <Link
-            href={`/posts/${prevPost.slug}`}
-            className="inline-flex items-center text-sm font-medium text-stone-600 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100"
-          >
-            <svg
-              className="mr-2 h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-            Older
-          </Link>
-        ) : (
-          <div />
-        )}
-        {nextPost ? (
-          <Link
-            href={`/posts/${nextPost.slug}`}
-            className="inline-flex items-center text-sm font-medium text-stone-600 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100"
-          >
-            Newer
-            <svg
-              className="ml-2 h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </Link>
-        ) : (
-          <div />
-        )}
-      </nav>
     </div>
   );
 }

@@ -1,20 +1,27 @@
 import { notFound } from "next/navigation";
-import { createReader } from "@keystatic/core/reader";
 import Markdoc from "@markdoc/markdoc";
 import React from "react";
-import config from "../../../../../keystatic.config";
-
-const reader = createReader(process.cwd(), config);
+import { reader } from "@/lib/keystatic";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+export const dynamic = "force-static";
+export const dynamicParams = false;
+
+/**
+ * Enumerate every post slug at build time so Next.js can prerender each post
+ * as static HTML. Paired with `dynamicParams = false`, this rejects any slug
+ * not known at build — eliminating a path-traversal surface on arbitrary
+ * user input passed to the Keystatic reader.
+ */
 export async function generateStaticParams() {
   const slugs = await reader.collections.posts.list();
   return slugs.map((slug) => ({ slug }));
 }
 
+/** Per-post `<head>` metadata driven by the post's frontmatter. */
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const post = await reader.collections.posts.read(slug);
@@ -29,6 +36,7 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
+/** Render a single blog post via Markdoc's React renderer (safe by default). */
 export default async function PostPage({ params }: PageProps) {
   const { slug } = await params;
   const post = await reader.collections.posts.read(slug);
@@ -45,7 +53,10 @@ export default async function PostPage({ params }: PageProps) {
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <article>
         <header className="mb-8">
-          <time className="text-sm text-stone-500 dark:text-stone-400">
+          <time
+            dateTime={new Date(post.date).toISOString()}
+            className="text-sm text-stone-500 dark:text-stone-400"
+          >
             {new Date(post.date).toLocaleDateString("en-US", {
               year: "numeric",
               month: "long",
@@ -55,7 +66,7 @@ export default async function PostPage({ params }: PageProps) {
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-100 sm:text-4xl">
             {post.title}
           </h1>
-          {post.tags.length > 0 && (
+          {post.tags?.length ? (
             <div className="mt-3 flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <span
@@ -66,7 +77,7 @@ export default async function PostPage({ params }: PageProps) {
                 </span>
               ))}
             </div>
-          )}
+          ) : null}
         </header>
 
         <div className="prose prose-stone dark:prose-invert max-w-none">

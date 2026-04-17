@@ -1,27 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { createReader } from "@keystatic/core/reader";
-import config from "../../../../keystatic.config";
-
-const reader = createReader(process.cwd(), config);
+import { listPosts } from "@/lib/keystatic";
 
 export const metadata: Metadata = {
   title: "Posts",
   description: "Thoughts on faith, code, and life.",
 };
 
-export default async function PostsPage() {
-  const postSlugs = await reader.collections.posts.list();
-  const posts = await Promise.all(
-    postSlugs.map(async (slug) => {
-      const post = await reader.collections.posts.read(slug);
-      return { slug, ...post! };
-    })
-  );
+export const dynamic = "force-static";
 
-  const sortedPosts = posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+/**
+ * Blog index route. Lists every post in the Keystatic `posts` collection in
+ * reverse-chronological order. Malformed entries are skipped rather than
+ * crashing the page — see `listPosts` in `src/lib/keystatic.ts`.
+ */
+export default async function PostsPage() {
+  const sortedPosts = await listPosts();
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
@@ -45,7 +39,10 @@ export default async function PostsPage() {
                   href={`/posts/${post.slug}`}
                   className="group block"
                 >
-                  <time className="text-sm text-stone-500 dark:text-stone-400">
+                  <time
+                    dateTime={new Date(post.date).toISOString()}
+                    className="text-sm text-stone-500 dark:text-stone-400"
+                  >
                     {new Date(post.date).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "long",

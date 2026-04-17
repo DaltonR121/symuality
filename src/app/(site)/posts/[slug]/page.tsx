@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Markdoc from "@markdoc/markdoc";
 import React from "react";
@@ -22,7 +23,9 @@ export async function generateStaticParams() {
 }
 
 /** Per-post `<head>` metadata driven by the post's frontmatter. */
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = await reader.collections.posts.read(slug);
 
@@ -30,9 +33,27 @@ export async function generateMetadata({ params }: PageProps) {
     return { title: "Post Not Found" };
   }
 
+  const url = `/posts/${slug}`;
+  const tags = post.tags ? [...post.tags] : [];
+
   return {
     title: post.title,
     description: post.excerpt || undefined,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      title: post.title,
+      description: post.excerpt || undefined,
+      publishedTime: new Date(post.date).toISOString(),
+      authors: ["Ryan Dalton"],
+      tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt || undefined,
+    },
   };
 }
 
@@ -49,8 +70,27 @@ export default async function PostPage({ params }: PageProps) {
   const transformed = Markdoc.transform(node);
   const renderable = Markdoc.renderers.react(transformed, React);
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt || undefined,
+    datePublished: new Date(post.date).toISOString(),
+    author: {
+      "@type": "Person",
+      name: "Ryan Dalton",
+      url: "https://www.symuality.com/about",
+    },
+    mainEntityOfPage: `https://www.symuality.com/posts/${slug}`,
+    keywords: post.tags?.length ? post.tags.join(", ") : undefined,
+  };
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <article>
         <header className="mb-8">
           <time

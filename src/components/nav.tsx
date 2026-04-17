@@ -27,7 +27,7 @@ export default function Nav() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <nav className="border-b border-stone-200 dark:border-stone-800">
+    <nav className="border-b border-border">
       <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
@@ -55,8 +55,8 @@ export default function Nav() {
                 aria-current={active ? "page" : undefined}
                 className={`rounded-sm py-2 -my-2 text-sm font-medium transition-colors ${
                   active
-                    ? "text-stone-900 dark:text-stone-100"
-                    : "text-stone-500 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100"
+                    ? "text-foreground"
+                    : "text-subtle hover:text-foreground"
                 }`}
               >
                 {link.label}
@@ -67,7 +67,7 @@ export default function Nav() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-md p-2 text-stone-600 hover:bg-stone-100 hover:text-stone-900 sm:hidden dark:text-stone-400 dark:hover:bg-stone-900 dark:hover:text-stone-100"
+          className="inline-flex items-center justify-center rounded-md p-2 text-muted hover:bg-chip-bg hover:text-foreground sm:hidden"
           aria-controls="mobile-nav"
           aria-expanded={menuOpen}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -103,7 +103,7 @@ export default function Nav() {
       {menuOpen ? (
         <div
           id="mobile-nav"
-          className="border-t border-stone-200 sm:hidden dark:border-stone-800"
+          className="border-t border-border sm:hidden"
         >
           <div className="mx-auto flex max-w-3xl flex-col px-4 py-2 sm:px-6 lg:px-8">
             {links.map((link) => {
@@ -116,8 +116,8 @@ export default function Nav() {
                   onClick={() => setMenuOpen(false)}
                   className={`rounded-sm px-2 py-3 text-base font-medium ${
                     active
-                      ? "text-stone-900 dark:text-stone-100"
-                      : "text-stone-600 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100"
+                      ? "text-foreground"
+                      : "text-muted hover:text-foreground"
                   }`}
                 >
                   {link.label}

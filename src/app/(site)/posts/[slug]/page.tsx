@@ -95,7 +95,7 @@ export default async function PostPage({ params }: PageProps) {
         <header className="mb-8">
           <time
             dateTime={new Date(post.date).toISOString()}
-            className="text-sm text-stone-500 dark:text-stone-400"
+            className="text-sm text-subtle"
           >
             {new Date(post.date).toLocaleDateString("en-US", {
               year: "numeric",
@@ -103,7 +103,7 @@ export default async function PostPage({ params }: PageProps) {
               day: "numeric",
             })}
           </time>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-100 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             {post.title}
           </h1>
           {post.tags?.length ? (
@@ -111,7 +111,7 @@ export default async function PostPage({ params }: PageProps) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-stone-100 px-2.5 py-0.5 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-400"
+                  className="rounded-full bg-chip-bg px-2.5 py-0.5 text-xs font-medium text-chip-fg"
                 >
                   {tag}
                 </span>

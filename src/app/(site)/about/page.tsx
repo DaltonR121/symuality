@@ -1,24 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { fullYearsSince } from "@/lib/date";
 
 export const metadata: Metadata = {
   title: "About",
   description: "The story behind Symuality and the person behind the screen.",
 };
-
-/**
- * Return the number of full years elapsed between `date` and today, correctly
- * accounting for whether this year's anniversary has already occurred.
- */
-function fullYearsSince(date: Date): number {
-  const today = new Date();
-  let years = today.getFullYear() - date.getFullYear();
-  const monthDiff = today.getMonth() - date.getMonth();
-  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < date.getDate())) {
-    years--;
-  }
-  return years;
-}
 
 export default function AboutPage() {
   const masonAge = fullYearsSince(new Date(2019, 4, 30));

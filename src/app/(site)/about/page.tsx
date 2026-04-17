@@ -57,10 +57,12 @@ export default function AboutPage() {
         </p>
 
         <Image
-          src="/wedding-collage.png"
+          src="/wedding-collage.webp"
           alt="Ryan and Jessica's wedding on the San Antonio Riverwalk, October 2016"
           width={1200}
           height={675}
+          sizes="(max-width: 768px) 100vw, 768px"
+          priority
           className="rounded-lg"
         />
 
@@ -139,10 +141,11 @@ export default function AboutPage() {
         </p>
 
         <Image
-          src="/kenworth-restoration.png"
+          src="/kenworth-restoration.webp"
           alt="2000 Kenworth restoration, before and after, restored with dad"
           width={1200}
           height={675}
+          sizes="(max-width: 768px) 100vw, 768px"
           className="rounded-lg"
         />
 
@@ -250,10 +253,11 @@ export default function AboutPage() {
         </p>
 
         <Image
-          src="/baptism.png"
+          src="/baptism.webp"
           alt="Ryan's baptism, June 2025"
           width={768}
           height={768}
+          sizes="(max-width: 768px) 100vw, 768px"
           className="rounded-lg"
         />
 

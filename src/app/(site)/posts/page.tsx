@@ -19,16 +19,16 @@ export default async function PostsPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-100">
+      <h1 className="text-3xl font-bold tracking-tight text-foreground">
         Posts
       </h1>
-      <p className="mt-2 text-stone-600 dark:text-stone-400">
+      <p className="mt-2 text-muted">
         Thoughts on faith, code, and life. Updated when I have something to say.
       </p>
 
       <div className="mt-8">
         {sortedPosts.length === 0 ? (
-          <p className="text-stone-500 dark:text-stone-400">
+          <p className="text-subtle">
             Nothing here yet. Check back soon.
           </p>
         ) : (
@@ -41,7 +41,7 @@ export default async function PostsPage() {
                 >
                   <time
                     dateTime={new Date(post.date).toISOString()}
-                    className="text-sm text-stone-500 dark:text-stone-400"
+                    className="text-sm text-subtle"
                   >
                     {new Date(post.date).toLocaleDateString("en-US", {
                       year: "numeric",
@@ -49,11 +49,11 @@ export default async function PostsPage() {
                       day: "numeric",
                     })}
                   </time>
-                  <h2 className="mt-1 text-lg font-semibold text-stone-900 group-hover:text-stone-600 dark:text-stone-100 dark:group-hover:text-stone-300">
+                  <h2 className="mt-1 text-lg font-semibold text-foreground group-hover:text-muted-foreground">
                     {post.title}
                   </h2>
                   {post.excerpt && (
-                    <p className="mt-1 text-stone-600 dark:text-stone-400">
+                    <p className="mt-1 text-muted">
                       {post.excerpt}
                     </p>
                   )}

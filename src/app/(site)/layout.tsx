@@ -14,7 +14,7 @@ export default function SiteLayout({
     <div className="flex min-h-screen flex-col">
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-stone-900 focus:px-3 focus:py-2 focus:text-stone-100 dark:focus:bg-stone-100 dark:focus:text-stone-900"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-foreground focus:px-3 focus:py-2 focus:text-background"
       >
         Skip to content
       </a>
@@ -22,12 +22,12 @@ export default function SiteLayout({
       <main id="main" className="flex-1">
         {children}
       </main>
-      <footer className="border-t border-stone-200 py-8 text-center dark:border-stone-800">
+      <footer className="border-t border-border py-8 text-center">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm text-stone-500 dark:text-stone-400">
+          <p className="text-sm text-subtle">
             &copy; {new Date().getFullYear()} Symuality
           </p>
-          <p className="mt-3 text-xs text-stone-500 dark:text-stone-400">
+          <p className="mt-3 text-xs text-subtle">
             A personal homepage. Not a brand. Not a funnel. Just a guy on the internet.
           </p>
         </div>

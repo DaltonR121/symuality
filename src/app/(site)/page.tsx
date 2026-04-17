@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { ExternalLink } from "@/components/external-link";
 
+/** Homepage. Personal intro plus an index of the site's four sub-routes. */
 export default function Home() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
@@ -7,24 +9,23 @@ export default function Home() {
         {/* Intro */}
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-100 sm:text-4xl">
-            Hey, I&apos;m Symuality.
+            Hey, I&apos;m Ryan.
           </h1>
-          <p className="mt-1 font-mono text-sm text-stone-400 dark:text-stone-500">
-            a.k.a. Ryan // the guy behind the screen
+          <p className="mt-1 font-mono text-sm text-stone-500 dark:text-stone-400">
+            online as Symuality (sim-you-al-ity)
           </p>
           <p className="mt-6 text-lg leading-relaxed text-stone-600 dark:text-stone-400">
-            Software engineer by day. Builder of things by nature. I spend time
-            with my family, wrench on cars, tinker with my homelab, play way too
-            much Rocket League, and occasionally roll a decent game at the
-            bowling alley. I also run a small web development agency called{" "}
-            <a
+            Software engineer, Army Reserves vet, follower of Christ, husband,
+            and dad in the Shenandoah Valley. I wrench on cars, tinker with my
+            homelab, play way too much Rocket League, and occasionally roll a
+            decent game at the bowling alley. I also run a small web
+            development agency called{" "}
+            <ExternalLink
               href="https://mosaicridge.com"
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-stone-900 underline underline-offset-2 hover:text-stone-700 dark:text-stone-200 dark:hover:text-stone-300"
             >
               Mosaic Ridge
-            </a>{" "}
+            </ExternalLink>{" "}
             and I&apos;m currently restoring a &apos;92 Chevy S10.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-stone-600 dark:text-stone-400">
@@ -63,12 +64,42 @@ export default function Home() {
             Find me elsewhere
           </h2>
           <div className="mt-3 flex flex-wrap gap-4">
-            <ExternalLink href="https://github.com/DaltonR121" label="GitHub" />
-            <ExternalLink href="https://x.com/Symuality" label="X" />
-            <ExternalLink href="https://www.youtube.com/channel/UCTKTWU21iCtx02T-v5OsHsA" label="YouTube" />
-            <ExternalLink href="https://rocketleague.tracker.network/rocket-league/profile/epic/Symuality/overview" label="RL Tracker" />
-            <ExternalLink href="https://ryandalton.dev" label="Portfolio" />
-            <ExternalLink href="https://mosaicridge.com" label="Mosaic Ridge" />
+            <ExternalLink
+              href="https://github.com/DaltonR121"
+              className="text-sm text-stone-600 underline underline-offset-2 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-200"
+            >
+              GitHub
+            </ExternalLink>
+            <ExternalLink
+              href="https://x.com/Symuality"
+              className="text-sm text-stone-600 underline underline-offset-2 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-200"
+            >
+              X
+            </ExternalLink>
+            <ExternalLink
+              href="https://www.youtube.com/channel/UCTKTWU21iCtx02T-v5OsHsA"
+              className="text-sm text-stone-600 underline underline-offset-2 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-200"
+            >
+              YouTube
+            </ExternalLink>
+            <ExternalLink
+              href="https://rocketleague.tracker.network/rocket-league/profile/epic/Symuality/overview"
+              className="text-sm text-stone-600 underline underline-offset-2 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-200"
+            >
+              RL Tracker
+            </ExternalLink>
+            <ExternalLink
+              href="https://ryandalton.dev"
+              className="text-sm text-stone-600 underline underline-offset-2 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-200"
+            >
+              Portfolio
+            </ExternalLink>
+            <ExternalLink
+              href="https://mosaicridge.com"
+              className="text-sm text-stone-600 underline underline-offset-2 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-200"
+            >
+              Mosaic Ridge
+            </ExternalLink>
           </div>
         </div>
       </div>
@@ -76,6 +107,7 @@ export default function Home() {
   );
 }
 
+/** Card link to a top-level route; heading is an h2 to preserve document outline. */
 function QuickLink({
   href,
   title,
@@ -90,26 +122,12 @@ function QuickLink({
       href={href}
       className="group rounded-lg border border-stone-200 p-5 transition-colors hover:border-stone-300 hover:bg-stone-50 dark:border-stone-800 dark:hover:border-stone-700 dark:hover:bg-stone-900"
     >
-      <h3 className="font-semibold text-stone-900 group-hover:text-stone-700 dark:text-stone-100 dark:group-hover:text-stone-300">
+      <h2 className="font-semibold text-stone-900 group-hover:text-stone-700 dark:text-stone-100 dark:group-hover:text-stone-300">
         {title}
-      </h3>
+      </h2>
       <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">
         {description}
       </p>
     </Link>
-  );
-}
-
-function ExternalLink({ href, label }: { href: string; label: string }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-sm text-stone-600 underline underline-offset-2 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-200"
-    >
-      {label}
-      <span className="sr-only"> (opens in a new tab)</span>
-    </a>
   );
 }

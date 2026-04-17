@@ -8,7 +8,8 @@ export const metadata: Metadata = {
 const projects = [
   {
     name: "Mosaic Ridge",
-    description: "Web development agency serving the Shenandoah Valley. Marketing site, admin CRM, and client websites.",
+    description:
+      "Web development agency serving the Shenandoah Valley. Marketing site, admin CRM, and client websites.",
     url: "https://mosaicridge.com",
     tag: "Business",
   },
@@ -20,18 +21,21 @@ const projects = [
   },
   {
     name: "stint",
-    description: "An open source developer tool.",
+    description:
+      "An open source developer tool I started because I wanted to solve a workflow problem I kept hitting. Early days — public on GitHub, not ready for daily use yet.",
     url: "https://github.com/DaltonR121/stint",
     tag: "Open Source",
   },
   {
     name: "Symuality",
-    description: "This site. A personal homepage built with Next.js and Keystatic.",
+    description:
+      "This site. A personal homepage built with Next.js and Keystatic.",
     url: "https://github.com/DaltonR121/symuality",
     tag: "Personal",
   },
 ];
 
+/** Index of projects worth linking to; each card is a single external link. */
 export default function ProjectsPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
@@ -49,13 +53,17 @@ export default function ProjectsPage() {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`${project.name} (${project.tag}) — opens in a new tab`}
             className="group block rounded-lg border border-stone-200 p-5 transition-colors hover:border-stone-300 hover:bg-stone-50 dark:border-stone-800 dark:hover:border-stone-700 dark:hover:bg-stone-900"
           >
             <div className="flex items-start justify-between">
               <h2 className="font-semibold text-stone-900 group-hover:text-stone-700 dark:text-stone-100 dark:group-hover:text-stone-300">
                 {project.name}
               </h2>
-              <span className="rounded-full bg-stone-100 px-2.5 py-0.5 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-400">
+              <span
+                aria-hidden="true"
+                className="rounded-full bg-stone-100 px-2.5 py-0.5 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-400"
+              >
                 {project.tag}
               </span>
             </div>

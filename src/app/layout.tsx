@@ -18,7 +18,12 @@ const SITE_DESCRIPTION =
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    types: {
+      "application/rss+xml": [{ url: "/feed.xml", title: "Symuality RSS" }],
+    },
+  },
   title: {
     default: "Symuality — Ryan Dalton, Software Engineer",
     template: "%s — Symuality",

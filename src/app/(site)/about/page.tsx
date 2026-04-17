@@ -6,17 +6,11 @@ export const metadata: Metadata = {
   description: "The story behind Symuality and the person behind the screen.",
 };
 
-function getAge(birthDate: Date): number {
-  const today = new Date();
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const monthDiff = today.getMonth() - birthDate.getMonth();
-  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-    age--;
-  }
-  return age;
-}
-
-function getYearsSince(date: Date): number {
+/**
+ * Return the number of full years elapsed between `date` and today, correctly
+ * accounting for whether this year's anniversary has already occurred.
+ */
+function fullYearsSince(date: Date): number {
   const today = new Date();
   let years = today.getFullYear() - date.getFullYear();
   const monthDiff = today.getMonth() - date.getMonth();
@@ -27,8 +21,8 @@ function getYearsSince(date: Date): number {
 }
 
 export default function AboutPage() {
-  const masonAge = getAge(new Date(2019, 4, 30));
-  const marriedYears = getYearsSince(new Date(2016, 9, 16));
+  const masonAge = fullYearsSince(new Date(2019, 4, 30));
+  const marriedYears = fullYearsSince(new Date(2016, 9, 16));
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">

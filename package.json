@@ -13,7 +13,7 @@
     "@keystatic/next": "^5.0.4",
     "@markdoc/markdoc": "^0.5.4",
     "@tailwindcss/typography": "^0.5.19",
-    "next": "16.1.7",
+    "next": "16.2.4",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
@@ -23,8 +23,16 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.1.6",
+    "eslint-config-next": "16.2.4",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "overrides": {
+      "minimatch@<9.0.7": ">=9.0.7",
+      "picomatch@<2.3.2": ">=2.3.2",
+      "brace-expansion@<2.0.3": ">=2.0.3",
+      "yaml@<1.10.3": ">=1.10.3"
+    }
   }
 }

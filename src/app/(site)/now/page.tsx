@@ -31,7 +31,7 @@ export default function NowPage() {
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <article className="prose prose-stone dark:prose-invert max-w-none">
         <h1>What I&apos;m Doing Now</h1>
-        <p className="not-prose text-sm text-stone-500 dark:text-stone-400">
+        <p className="not-prose text-sm text-subtle">
           Updated{" "}
           <time dateTime={LAST_UPDATED.toISOString().slice(0, 10)}>
             {formatMonthYear(LAST_UPDATED)}
@@ -98,7 +98,7 @@ export default function NowPage() {
         </ul>
 
         <hr />
-        <p className="text-sm text-stone-500 dark:text-stone-400">
+        <p className="text-sm text-subtle">
           This is a{" "}
           <ExternalLink href="https://nownownow.com/about">
             /now page

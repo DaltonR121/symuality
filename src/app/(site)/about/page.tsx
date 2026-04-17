@@ -19,7 +19,7 @@ export default function AboutPage() {
         <p className="mb-0">
           Welcome, I&apos;m Symuality.
         </p>
-        <p className="not-prose text-lg italic text-stone-500 dark:text-stone-400">
+        <p className="not-prose text-lg italic text-subtle">
           sim-you-al-ity
         </p>
 
@@ -303,7 +303,7 @@ export default function AboutPage() {
             understanding. In all your ways, acknowledge him, and he will make
             straight your paths.
           </p>
-          <footer className="not-prose mt-2 text-sm text-stone-500 dark:text-stone-400">
+          <footer className="not-prose mt-2 text-sm text-subtle">
             &ndash; Proverbs 3:5-6
           </footer>
         </blockquote>

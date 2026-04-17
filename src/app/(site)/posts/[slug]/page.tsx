@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Markdoc from "@markdoc/markdoc";
+import Markdoc, { type Config } from "@markdoc/markdoc";
 import React from "react";
 import { reader } from "@/lib/keystatic";
+import { PostImage } from "./post-image";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -10,6 +11,31 @@ interface PageProps {
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
+
+const markdocConfig: Config = {
+  nodes: {
+    image: {
+      render: "PostImage",
+      attributes: {
+        src: { type: String, required: true },
+        alt: { type: String },
+        title: { type: String },
+      },
+    },
+  },
+};
+
+const proseClassName = [
+  "prose prose-stone dark:prose-invert max-w-none",
+  "prose-code:before:content-none prose-code:after:content-none",
+  "prose-code:rounded prose-code:bg-chip-bg prose-code:px-1.5 prose-code:py-0.5",
+  "prose-code:font-normal prose-code:text-chip-fg",
+  "prose-pre:bg-chip-bg prose-pre:border prose-pre:border-border",
+  "prose-pre:text-chip-fg",
+  "prose-a:text-foreground prose-a:underline-offset-2",
+  "prose-img:rounded-lg",
+  "prose-blockquote:border-border-strong prose-blockquote:text-muted",
+].join(" ");
 
 /**
  * Enumerate every post slug at build time so Next.js can prerender each post
@@ -67,8 +93,10 @@ export default async function PostPage({ params }: PageProps) {
   }
 
   const { node } = await post.content();
-  const transformed = Markdoc.transform(node);
-  const renderable = Markdoc.renderers.react(transformed, React);
+  const transformed = Markdoc.transform(node, markdocConfig);
+  const renderable = Markdoc.renderers.react(transformed, React, {
+    components: { PostImage },
+  });
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -120,11 +148,8 @@ export default async function PostPage({ params }: PageProps) {
           ) : null}
         </header>
 
-        <div className="prose prose-stone dark:prose-invert max-w-none">
-          {renderable}
-        </div>
+        <div className={proseClassName}>{renderable}</div>
       </article>
-
     </div>
   );
 }

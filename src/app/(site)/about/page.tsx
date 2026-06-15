@@ -1,34 +1,32 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { fullYearsSince } from "@/lib/date";
+import { slugify } from "@/lib/slug";
 
 export const metadata: Metadata = {
   title: "About",
   description: "The story behind Symuality and the person behind the screen.",
 };
 
-function getAge(birthDate: Date): number {
-  const today = new Date();
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const monthDiff = today.getMonth() - birthDate.getMonth();
-  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-    age--;
-  }
-  return age;
-}
+/** Ordered list of the h2 sections on this page — drives the TOC. */
+const sections = [
+  "Behind the Screen",
+  "The Long Way Around",
+  "Trucks, Cars, and Code",
+  "How I Got Into Code",
+  "The Name",
+  "Found",
+  "Full Circle",
+  "Other Interests",
+  "The Rig",
+  "Go-To Orders",
+] as const;
 
-function getYearsSince(date: Date): number {
-  const today = new Date();
-  let years = today.getFullYear() - date.getFullYear();
-  const monthDiff = today.getMonth() - date.getMonth();
-  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < date.getDate())) {
-    years--;
-  }
-  return years;
-}
+const id = (heading: (typeof sections)[number]) => slugify(heading);
 
 export default function AboutPage() {
-  const masonAge = getAge(new Date(2019, 4, 30));
-  const marriedYears = getYearsSince(new Date(2016, 9, 16));
+  const masonAge = fullYearsSince(new Date(2019, 4, 30));
+  const marriedYears = fullYearsSince(new Date(2016, 9, 16));
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
@@ -38,11 +36,32 @@ export default function AboutPage() {
         <p className="mb-0">
           Welcome, I&apos;m Symuality.
         </p>
-        <p className="not-prose text-lg italic text-stone-500 dark:text-stone-400">
+        <p className="not-prose text-lg italic text-subtle">
           sim-you-al-ity
         </p>
 
-        <h2>Behind the Screen</h2>
+        <nav
+          aria-label="On this page"
+          className="not-prose my-8 rounded-lg border border-border bg-surface-hover p-4"
+        >
+          <p className="mb-2 text-xs font-medium uppercase tracking-wide text-subtle">
+            On this page
+          </p>
+          <ul className="grid gap-x-6 gap-y-1 sm:grid-cols-2">
+            {sections.map((heading) => (
+              <li key={heading}>
+                <a
+                  href={`#${id(heading)}`}
+                  className="text-sm text-muted underline-offset-2 hover:text-foreground hover:underline"
+                >
+                  {heading}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <h2 id={id("Behind the Screen")}>Behind the Screen</h2>
         <p>
           My name is Ryan Dalton. I&apos;m a full-time software engineer, the
           founder of a small web development agency called{" "}
@@ -63,10 +82,12 @@ export default function AboutPage() {
         </p>
 
         <Image
-          src="/wedding-collage.png"
+          src="/wedding-collage.webp"
           alt="Ryan and Jessica's wedding on the San Antonio Riverwalk, October 2016"
           width={1200}
           height={675}
+          sizes="(max-width: 768px) 100vw, 768px"
+          priority
           className="rounded-lg"
         />
 
@@ -85,7 +106,7 @@ export default function AboutPage() {
           named Pikachu.
         </p>
 
-        <h2>The Long Way Around</h2>
+        <h2 id={id("The Long Way Around")}>The Long Way Around</h2>
         <p>
           I grew up in Morgantown, West Virginia and drove tractor trailer for
           ten years because it&apos;s what I watched my dad do my whole life.
@@ -125,7 +146,7 @@ export default function AboutPage() {
           my duty for my country.
         </p>
 
-        <h2>Trucks, Cars, and Code</h2>
+        <h2 id={id("Trucks, Cars, and Code")}>Trucks, Cars, and Code</h2>
         <p>
           I started wrenching on big trucks before cars. My dad never wanted the
           blue-collar lifestyle for me and kept me away from his truck garage
@@ -145,14 +166,15 @@ export default function AboutPage() {
         </p>
 
         <Image
-          src="/kenworth-restoration.png"
+          src="/kenworth-restoration.webp"
           alt="2000 Kenworth restoration, before and after, restored with dad"
           width={1200}
           height={675}
+          sizes="(max-width: 768px) 100vw, 768px"
           className="rounded-lg"
         />
 
-        <h2>How I Got Into Code</h2>
+        <h2 id={id("How I Got Into Code")}>How I Got Into Code</h2>
         <p>
           Web development interested me as early as middle school. We learned a
           tiny bit of HTML in 7th grade computer class and I thought it was the
@@ -179,7 +201,7 @@ export default function AboutPage() {
           away from home on major holidays and family birthdays anymore.
         </p>
 
-        <h2>The Name</h2>
+        <h2 id={id("The Name")}>The Name</h2>
         <p>
           Symuality came from a stint of soul searching and wanting to establish
           a unique online presence, whether for gaming or otherwise. I&apos;ve
@@ -191,7 +213,7 @@ export default function AboutPage() {
           didn&apos;t know fully why.
         </p>
 
-        <h2>Found</h2>
+        <h2 id={id("Found")}>Found</h2>
         <p>
           My life before Christ can best be described as &ldquo;Casual
           Christianity&rdquo; or being a &ldquo;Comfort-zone Christian.&rdquo;
@@ -256,10 +278,11 @@ export default function AboutPage() {
         </p>
 
         <Image
-          src="/baptism.png"
+          src="/baptism.webp"
           alt="Ryan's baptism, June 2025"
           width={768}
           height={768}
+          sizes="(max-width: 768px) 100vw, 768px"
           className="rounded-lg"
         />
 
@@ -271,7 +294,7 @@ export default function AboutPage() {
           so thankful to be part of a community that shares our values.
         </p>
 
-        <h2>Full Circle</h2>
+        <h2 id={id("Full Circle")}>Full Circle</h2>
         <p>
           Finding Christ brought the name into focus. I had always been drawn
           to this idea of a &ldquo;simulated reality,&rdquo; but I had it
@@ -283,7 +306,7 @@ export default function AboutPage() {
           understood why.
         </p>
 
-        <h2>Other Interests</h2>
+        <h2 id={id("Other Interests")}>Other Interests</h2>
         <ul>
           <li>Homelabbing. Running TrueNAS on a mini-PC and tinkering with it.</li>
           <li>Home improvement. The never-ending list.</li>
@@ -291,7 +314,7 @@ export default function AboutPage() {
           <li>Bible study (daily)</li>
         </ul>
 
-        <h2>The Rig</h2>
+        <h2 id={id("The Rig")}>The Rig</h2>
         <p>
           Built around 2018 and gradually upgraded since. Hoping it lasts a bit
           longer before I have to jump off the retired AM4 chipset.
@@ -303,7 +326,7 @@ export default function AboutPage() {
           <li><strong>OS:</strong> Linux (btw). Ubuntu to Debian back to Ubuntu. Would love to be an Arch bro but I&apos;m not sure I&apos;m cool enough. Dual booting Windows 11 for Rocket League.</li>
         </ul>
 
-        <h2>Go-To Orders</h2>
+        <h2 id={id("Go-To Orders")}>Go-To Orders</h2>
         <p>I have a go-to order at every restaurant. Name anywhere and I could tell you this very moment what I&apos;d be ordering.</p>
         <ul>
           <li><strong>Taco Bell:</strong> Chicken Quesadilla combo</li>
@@ -318,7 +341,7 @@ export default function AboutPage() {
             understanding. In all your ways, acknowledge him, and he will make
             straight your paths.
           </p>
-          <footer className="not-prose mt-2 text-sm text-stone-500 dark:text-stone-400">
+          <footer className="not-prose mt-2 text-sm text-subtle">
             &ndash; Proverbs 3:5-6
           </footer>
         </blockquote>

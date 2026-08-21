@@ -124,9 +124,11 @@ Keystatic 0.5.x still bundles Markdoc **0.4.0**, so the `Node` returned by
 typecheck and build fail at `src/app/(site)/posts/[slug]/page.tsx`. A caret
 range floats back onto the break on the next fresh resolve.
 
-Dependabot will keep proposing the bump. It cannot be taken until Keystatic
-ships a newer bundled Markdoc (0.6.x may fix it, but that upgrade deserves its
-own PR with the render path actually exercised).
+It cannot be taken until Keystatic ships a newer bundled Markdoc (0.6.x may fix
+it, but that upgrade deserves its own PR with the render path actually
+exercised). `.github/dependabot.yml` carries a matching `ignore` rule for
+`>=0.5.8` so the bump stops being reproposed - lift that rule and the pin
+together, never one without the other.
 
 ### No analytics, and that is on purpose
 
@@ -173,8 +175,12 @@ CI (`.github/workflows/ci.yml`) runs on **push to `main`** plus
 no external contributors, so it is *not* the `stint` exception and should not
 gain a `pull_request` trigger.
 
-⚠️ **Known snag:** `main`'s branch protection requires the status check
-`Lint, typecheck & build`, which only ever reports on push-to-main. A PR
-therefore can never satisfy it and normal merges are blocked. Until the
-protection rule is fixed, merges need `gh pr merge --admin`. The real gate is
-the local run above.
+`main` is protected: PRs required, no direct pushes, no force-pushes, no
+deletions, zero required approvals (single maintainer).
+
+It deliberately has **no required status check**. One was configured
+(`Lint, typecheck & build`), but that check only ever reports on push-to-main,
+so no PR could satisfy it and every merge needed `gh pr merge --admin`. The
+rule was removed 2026-08-21 to match the org convention: the local gate above
+is the real gate, and the on-main run is post-merge insurance. Do not re-add a
+required check unless CI also starts running on pull requests.

@@ -14,6 +14,15 @@ updates:
       prefix: chore
       prefix-development: chore
       include: scope
+    # Markdoc 0.5.8 narrowed Schema.children from string[] to NodeType[].
+    # Keystatic 0.5.x still bundles Markdoc 0.4.0, so the Node returned by
+    # post.content() is no longer assignable to transform() and both typecheck
+    # and build fail in src/app/(site)/posts/[slug]/page.tsx. The dependency is
+    # pinned exactly at 0.5.7 for that reason; lift this ignore only once
+    # Keystatic ships a newer bundled Markdoc.
+    ignore:
+      - dependency-name: "@markdoc/markdoc"
+        versions: [">=0.5.8"]
     groups:
       next:
         patterns:

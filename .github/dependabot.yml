@@ -23,6 +23,10 @@ updates:
     ignore:
       - dependency-name: "@markdoc/markdoc"
         versions: [">=0.5.8"]
+      # @types/node tracks the Node major the site runs on (Node 24 on Vercel,
+      # locally and in CI). Majors move by hand when the runtime does.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
     groups:
       next:
         patterns:

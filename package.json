@@ -18,7 +18,7 @@
     "@keystatic/next": "^5.0.5",
     "@markdoc/markdoc": "0.5.7",
     "@tailwindcss/typography": "^0.5.20",
-    "next": "16.3.5",
+    "next": "16.3.8",
     "react": "19.3.1",
     "react-dom": "19.3.1"
   },
@@ -29,9 +29,10 @@
     "@types/react-dom": "^19.3.0",
     "@vitest/coverage-v8": "^5.0.1",
     "eslint": "^9",
-    "eslint-config-next": "16.3.5",
+    "eslint-config-next": "16.3.8",
     "tailwindcss": "^4.3.3",
     "typescript": "^6",
+    "vite": "^8.3.5",
     "vitest": "^5.0.1"
   },
   "pnpm": {
@@ -39,7 +40,7 @@
       "minimatch@3": "^3.1.4",
       "minimatch@9": "^9.0.7",
       "flatted": "^3.4.2",
-      "brace-expansion@1": "^1.1.16",
+      "brace-expansion@1": "^1.1.21",
       "brace-expansion@2": "^2.1.4",
       "picomatch@2": "^2.3.2",
       "picomatch@4": "^4.0.4",
@@ -50,8 +51,12 @@
       "ajv@6": "^6.14.0",
       "lodash": "^4.18.0",
       "nanoid@5": "^5.1.16",
-      "sharp": "^0.35.4",
-      "@humanfs/node": "^0.16.8"
+      "sharp": "^0.35.5",
+      "@humanfs/node": "^0.16.8",
+      "brace-expansion@5": "^5.0.12",
+      "source-map-js": "^1.2.2",
+      "prosemirror-view": "^1.42.3",
+      "postcss-selector-parser@6.0.10": "^7.1.6"
     }
   }
 }

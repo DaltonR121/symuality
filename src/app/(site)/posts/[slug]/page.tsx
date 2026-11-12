@@ -40,7 +40,7 @@ const proseClassName = [
 /**
  * Enumerate every post slug at build time so Next.js can prerender each post
  * as static HTML. Paired with `dynamicParams = false`, this rejects any slug
- * not known at build — eliminating a path-traversal surface on arbitrary
+ * not known at build, eliminating a path-traversal surface on arbitrary
  * user input passed to the Keystatic reader.
  */
 export async function generateStaticParams() {

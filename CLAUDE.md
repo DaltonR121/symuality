@@ -86,15 +86,10 @@ The baseline is deliberate and easy to regress:
   `rel="noopener noreferrer"` plus an `sr-only` "opens in a new tab" hint.
   Prefer it over a hand-rolled `target="_blank"` anchor.
 
-Two places currently bypass it, for different reasons:
-
-- `(site)/projects/page.tsx` wraps whole cards in an anchor and announces the
-  new tab through `aria-label` instead. That is deliberate: `ExternalLink`
-  appends its hint as a trailing `sr-only` span, which does not compose with
-  card content.
-- `(site)/about/page.tsx` has one inline prose link to mosaicridge.com that
-  carries `rel` but no new-tab announcement. That one is an inconsistency, not
-  a decision - worth folding into `ExternalLink` next time the file is touched.
+One place deliberately bypasses it: `(site)/projects/page.tsx` wraps whole
+cards in an anchor and announces the new tab through `aria-label` instead.
+`ExternalLink` appends its hint as a trailing `sr-only` span, which does not
+compose with card content.
 
 ### Content lives in Keystatic, edited locally
 

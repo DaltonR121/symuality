@@ -4,7 +4,7 @@ import { listPosts } from "@/lib/keystatic";
 const BASE_URL = "https://www.symuality.com";
 
 /**
- * App Router sitemap — emits the five static routes plus every blog post.
+ * App Router sitemap that emits the five static routes plus every blog post.
  * Posts are sourced from Keystatic at build time via `listPosts`, so newly
  * published posts appear in the sitemap on the next deploy without any
  * manual update.

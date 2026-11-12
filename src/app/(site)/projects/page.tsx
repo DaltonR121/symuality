@@ -9,9 +9,16 @@ const projects = [
   {
     name: "Mosaic Ridge",
     description:
-      "Web development agency serving the Shenandoah Valley. Marketing site, admin CRM, and client websites.",
+      "My web development agency in the Shenandoah Valley. I build and maintain websites for small businesses, with a personal touch instead of a ticket system.",
     url: "https://mosaicridge.com",
     tag: "Business",
+  },
+  {
+    name: "Risky Rides",
+    description:
+      "Buy, sell, and trade cheap project cars and parts. Everything is listed under $5,000.",
+    url: "https://www.riskyrides.com",
+    tag: "Side Project",
   },
   {
     name: "RyanDalton.dev",
@@ -22,7 +29,7 @@ const projects = [
   {
     name: "stint",
     description:
-      "An open source developer tool I started because I wanted to solve a workflow problem I kept hitting. Early days — public on GitHub, not ready for daily use yet.",
+      "An open source developer tool I started because I wanted to solve a workflow problem I kept hitting. Early days, public on GitHub, not ready for daily use yet.",
     url: "https://github.com/DaltonR121/stint",
     tag: "Open Source",
   },
@@ -53,7 +60,7 @@ export default function ProjectsPage() {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`${project.name} (${project.tag}) — opens in a new tab`}
+            aria-label={`${project.name} (${project.tag}), opens in a new tab`}
             className="group block rounded-lg border border-border p-5 transition-colors hover:border-border-strong hover:bg-surface-hover"
           >
             <div className="flex items-start justify-between">

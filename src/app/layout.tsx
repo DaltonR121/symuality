@@ -25,15 +25,15 @@ export const metadata: Metadata = {
     },
   },
   title: {
-    default: "Symuality — Ryan Dalton, Software Engineer",
-    template: "%s — Symuality",
+    default: "Symuality - Ryan Dalton, Software Engineer",
+    template: "%s - Symuality",
   },
   description: SITE_DESCRIPTION,
   openGraph: {
     type: "website",
     siteName: "Symuality",
     url: SITE_URL,
-    title: "Symuality — Ryan Dalton, Software Engineer",
+    title: "Symuality - Ryan Dalton, Software Engineer",
     description: SITE_DESCRIPTION,
     locale: "en_US",
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     creator: "@Symuality",
     site: "@Symuality",
-    title: "Symuality — Ryan Dalton, Software Engineer",
+    title: "Symuality - Ryan Dalton, Software Engineer",
     description: SITE_DESCRIPTION,
   },
 };

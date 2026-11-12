@@ -1,7 +1,7 @@
 import { listPosts } from "@/lib/keystatic";
 
 const BASE_URL = "https://www.symuality.com";
-const FEED_TITLE = "Symuality — Ryan Dalton";
+const FEED_TITLE = "Symuality - Ryan Dalton";
 const FEED_DESCRIPTION = "Thoughts on faith, code, and life.";
 const FEED_LANGUAGE = "en";
 
@@ -22,7 +22,7 @@ function escapeXml(value: string): string {
 
 /**
  * Serve the site's RSS 2.0 feed at /feed.xml. One `<item>` per blog post in
- * reverse-chronological order. Content is excerpt-only — readers who want the
+ * reverse-chronological order. Content is excerpt-only; readers who want the
  * full post follow the link, which keeps the feed small and lets the site
  * retain analytics-free discovery.
  */

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { ExternalLink } from "@/components/external-link";
 import { fullYearsSince } from "@/lib/date";
 import { slugify } from "@/lib/slug";
 
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   description: "The story behind Symuality and the person behind the screen.",
 };
 
-/** Ordered list of the h2 sections on this page — drives the TOC. */
+/** Ordered list of the h2 sections on this page; drives the TOC. */
 const sections = [
   "Behind the Screen",
   "The Long Way Around",
@@ -65,13 +66,7 @@ export default function AboutPage() {
         <p>
           My name is Ryan Dalton. I&apos;m a full-time software engineer, the
           founder of a small web development agency called{" "}
-          <a
-            href="https://mosaicridge.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Mosaic Ridge
-          </a>
+          <ExternalLink href="https://mosaicridge.com">Mosaic Ridge</ExternalLink>
           , and a husband and dad living in Churchville, Virginia.
         </p>
         <p>
@@ -97,13 +92,17 @@ export default function AboutPage() {
           claims to be an introvert but I&apos;m secretly convinced she&apos;s
           just an extremely shy, anxiety-filled extrovert. We joke that
           she&apos;s a golden retriever because she enjoys nothing more than a
-          good drive.
+          good drive. These days she also sells her baking as{" "}
+          <ExternalLink href="https://www.hotoffhotchkiss.com">
+            Hot Off Hotchkiss
+          </ExternalLink>
+          .
         </p>
         <p>
-          Our son Mason is {masonAge} and is all energy. He loves karate, shooting
-          hoops in the driveway, passing football, making dad play Fortnite, and
-          helping me wrench on the project car. He also has a pet ball python
-          named Pikachu.
+          Our son Mason is {masonAge} and is all energy. He loves baseball,
+          shooting hoops in the driveway, passing football, Minecraft, Super
+          Smash Bros, and AWANA Club on Wednesday nights. He also has a pet
+          ball python named Pikachu.
         </p>
 
         <h2 id={id("The Long Way Around")}>The Long Way Around</h2>
@@ -308,7 +307,7 @@ export default function AboutPage() {
 
         <h2 id={id("Other Interests")}>Other Interests</h2>
         <ul>
-          <li>Homelabbing. Running TrueNAS on a mini-PC and tinkering with it.</li>
+          <li>Homelabbing, on hold until I can build it right: a bigger server with real 20TB drives and real redundancy.</li>
           <li>Home improvement. The never-ending list.</li>
           <li>Bowling. I used to average around 180-200 when I bowled in a league about 15 years ago.</li>
           <li>Bible study (daily)</li>

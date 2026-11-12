@@ -19,17 +19,16 @@ export default function Home() {
           </p>
           <p className="mt-6 text-lg leading-relaxed text-muted">
             Software engineer, Army Reserves vet, follower of Christ, husband,
-            and dad in the Shenandoah Valley. I wrench on cars, tinker with my
-            homelab, play way too much Rocket League, and occasionally roll a
-            decent game at the bowling alley. I also run a small web
-            development agency called{" "}
+            and dad in the Shenandoah Valley. I wrench on cars, play way too
+            much Rocket League, and occasionally roll a decent game at the
+            bowling alley. I also run a small web development agency called{" "}
             <ExternalLink
               href="https://mosaicridge.com"
               className="text-foreground underline underline-offset-2 hover:text-muted-foreground"
             >
               Mosaic Ridge
-            </ExternalLink>{" "}
-            and I&apos;m currently restoring a &apos;92 Chevy S10.
+            </ExternalLink>
+            .
           </p>
           <p className="mt-4 text-lg leading-relaxed text-muted">
             This is my corner of the internet. No algorithm, no analytics, no content

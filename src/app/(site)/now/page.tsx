@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "What Ryan is currently working on, playing, and thinking about.",
 };
 
-const LAST_UPDATED = new Date(2026, 2, 15);
+const LAST_UPDATED = new Date(2026, 10, 12);
 const STALE_AFTER_DAYS = 90;
 
 /**
@@ -47,9 +47,34 @@ export default function NowPage() {
 
         <h2>Family</h2>
         <ul>
-          <li>Jessica is baking, gardening, and making Target runs</li>
-          <li>Mason is about to earn his Yellow belt in karate</li>
-          <li>Pikachu (ball python) is doing ball python things</li>
+          <li>
+            Jessica is baking and selling her cookies and cupcakes as{" "}
+            <ExternalLink href="https://www.hotoffhotchkiss.com">
+              Hot Off Hotchkiss
+            </ExternalLink>
+          </li>
+          <li>
+            Mason traded karate for baseball and just wrapped his first season
+            of Rookie ball. His team went 7-1 and he hit .692.
+          </li>
+          <li>
+            Mason is also into Minecraft, Super Smash Bros, and music. His
+            favorite song used to be Magnetic by Wage War. Now it&apos;s
+            Believer by Imagine Dragons.
+          </li>
+          <li>Pikachu (ball python) is over a year old now and doing great</li>
+        </ul>
+
+        <h2>Church</h2>
+        <ul>
+          <li>
+            We&apos;ve found a new church home locally and we&apos;re really
+            happy to be involved there
+          </li>
+          <li>
+            Mason goes to AWANA Club on Wednesday nights and loves it. He
+            never misses unless a school event gets in the way.
+          </li>
         </ul>
 
         <h2>Working On</h2>
@@ -68,33 +93,41 @@ export default function NowPage() {
             </ExternalLink>
             )
           </li>
+          <li>
+            <ExternalLink href="https://www.riskyrides.com">
+              Risky Rides
+            </ExternalLink>
+            , a place to buy, sell, and trade cheap project cars and parts
+            (everything under $5,000)
+          </li>
           <li>This site</li>
         </ul>
 
-        <h2>The Project Car</h2>
-        <p>
-          1992 Chevy S10 pickup with a 5-speed transmission and 2.5L Iron Duke
-          motor. I bought it to be a daily driver and it needed new timing
-          gears. The more I looked around after getting it home, the more I
-          just couldn&apos;t stand the shape it&apos;s in. It&apos;s turning
-          into a full restoration. I&apos;ll be documenting the process on{" "}
-          <ExternalLink href="https://www.youtube.com/channel/UCTKTWU21iCtx02T-v5OsHsA">
-            YouTube
-          </ExternalLink>
-          .
-        </p>
+        <h2>On Hold</h2>
+        <ul>
+          <li>
+            <strong>The S10.</strong> The &apos;92 Chevy S10 restoration
+            didn&apos;t happen. It&apos;s being parted out and sold. I
+            didn&apos;t have the budget to do it the way I wanted to.
+          </li>
+          <li>
+            <strong>The homelab.</strong> I wasn&apos;t happy with my old
+            setup, so it&apos;s gone. Someday I want to do it right: a bigger
+            server with real 20TB drives and real redundancy. Until then, no
+            homelab.
+          </li>
+        </ul>
 
         <h2>Playing</h2>
         <ul>
           <li>
-            Rocket League (always). Hanging around Diamond in most competitive
-            modes. Dropshot &gt; Snow Day and that is the hill I will die on.{" "}
+            Rocket League (always). Still hanging around Diamond in most
+            competitive modes. Dropshot &gt; Snow Day and that is the hill I will die on.{" "}
             <ExternalLink href="https://rocketleague.tracker.network/rocket-league/profile/epic/Symuality/overview">
               Check my stats
             </ExternalLink>
             .
           </li>
-          <li>Fortnite (because Mason makes me)</li>
         </ul>
 
         <hr />

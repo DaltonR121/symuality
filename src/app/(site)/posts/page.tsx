@@ -12,7 +12,7 @@ export const dynamic = "force-static";
 /**
  * Blog index route. Lists every post in the Keystatic `posts` collection in
  * reverse-chronological order. Malformed entries are skipped rather than
- * crashing the page — see `listPosts` in `src/lib/keystatic.ts`.
+ * crashing the page; see `listPosts` in `src/lib/keystatic.ts`.
  */
 export default async function PostsPage() {
   const sortedPosts = await listPosts();
